@@ -147,6 +147,9 @@
         <script src="js/owl-carousel.js"></script>
         <script src="js/masonry.js"></script>
         <script src="js/nicescroll.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 
         <!-- Custom scripts -->
         <script src="js/custom.js"></script>
