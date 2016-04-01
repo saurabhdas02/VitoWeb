@@ -11,7 +11,13 @@ class Landing extends CI_Controller {
 			
 			show_404();
 		}
-		$this->load->view('pages/'.$page);
+		
+		$data['title'] = $page;
+		
+		$this->load->view('templates/header',$data);
+		//$this->load->view('templates/nav');
+		$this->load->view('pages/'.$page,$data);
+		$this->load->view('templates/footer');
 	}
 	
 	/*public function index()
