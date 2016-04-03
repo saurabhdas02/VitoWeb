@@ -18,8 +18,15 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index($page = "about")
 	{
-		$this->load->view('welcome_message');
+		$data['title'] = $page;
+		$navdata['Category'] = array("Food","restro","fashon","hello","world","sflds","vdkjs","svkskdvbsk","sdvbsbdv","sbkbd","bcjhbdc","bdhbcz",
+		"ckjd be u","acbc","More");
+		
+		$this->load->view('templates/header',$data);
+		$this->load->view('templates/nav',$navdata);
+		$this->load->view('pages/about',$data);
+		$this->load->view('templates/footer');
 	}
 }

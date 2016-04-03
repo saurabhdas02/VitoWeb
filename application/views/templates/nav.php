@@ -40,61 +40,54 @@
         <header class="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav class="navmenu">
                             <ul>
-                            	<li><a href="#">Home</a></li>
-                            	<li><a href="#">Category</a>
+                            	<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li><li>
+                            	<a href="#">Category</a>
                             		<ul id="col-3-menu">
-                            			<li id="multicol"><a href="#">Food & Drink</a></li>
-                            			<li id="multicol"><a href="#">Restraunt</a></li>
-                            			<li id="multicol"><a href="#">Fashion</a></li>
-                            			<li id="multicol"><a href="#">Home Accesories</a></li>
-                            			<li id="multicol"><a href="#">Electronics</a></li>
-                            			<li id="multicol"><a href="#">Computer</a></li>
+                            		<?php foreach($Category as $Cat){ ?>
+                            			<li id="multicol"><a href="#"><?=$Cat?></a></li>
+                            		<?php } ?>
+                            		</ul>
+                            	</li><li>
+                            	<a href="#">Top Stores</a>
+                            		<ul id="col-3-menu">
+                            			<?php foreach($Category as $Cat){ ?>
+                            				<li id="multicol"><a href="#"><?=$Cat?></a></li>
+                            			<?php } ?>
+                            		</ul>
+                            	</li><li>
+                            		<a href="#">Local Offers</a>
+                            		<ul id="col-3-menu">
+	                            		<?php foreach($Category as $Cat){ ?>
+	                            			<li id="multicol"><a href="#"><?=$Cat?></a></li>
+	                            		<?php } ?>
+                            		</ul>
+                            	</li><li>
+                            		<a href="#">Bank Offers</a>
+                            		<ul id="col-3-menu">
+	                            		<?php foreach($Category as $Cat){ ?>
+	                            			<li id="multicol"><a href="#"><?=$Cat?></a></li>
+	                            		<?php } ?>
+                            		</ul>
+                            	</li><li>
+                            		<a href="#">Top Offers</a>
+                            		<ul id="col-2-menu">
+	                            		<li id="multicol"><a href="#">Top offer here</a></li>
+	                            		<li id="multicol"><a href="#">Top offer here</a></li>
+	                            		<li id="multicol"><a href="#">Top offer here</a></li>
+	                            		<li id="multicol"><a href="#">Top offer here</a></li>
+	                            		<li id="multicol"><a href="#">Top offer here</a></li>
+	                            		<li id="multicol"><a href="#">Top offer here</a></li>
                             		</ul>
                             	</li>
-                            	<li><a href="#">Top Stores</a>
-                            		<ul>
-                            			<li><a href="#">Food & Drink</a></li>
-                            			<li><a href="#">Restraunt</a></li>
-                            			<li><a href="#">Fashion</a></li>
-                            			<li><a href="#">Home Accesories</a></li>
-                            			<li><a href="#">Electronics</a></li>
-                            			<li><a href="#">Computer</a></li>
-                            		</ul>
-                            	</li>
-                            	<li><a href="#">Top Offers</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <ul class="login-register">
-                            <li class="shopping-cart"><a href="page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
-                                <div class="shopping-cart-box">
-                                    <ul class="shopping-cart-items">
-                                        <li>
-                                            <a href="product-shop-sidebar.html">
-                                                <img src="img/70x70.png" alt="Image Alternative text" title="AMaze" />
-                                                <h5>New Glass Collection</h5><span class="shopping-cart-item-price">$150</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="product-shop-sidebar.html">
-                                                <img src="img/70x70.png" alt="Image Alternative text" title="Gamer Chick" />
-                                                <h5>Playstation Accessories</h5><span class="shopping-cart-item-price">$170</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="list-inline text-center">
-                                        <li><a href="page-cart.html"><i class="fa fa-shopping-cart"></i> View Cart</a>
-                                        </li>
-                                        <li><a href="page-checkout.html"><i class="fa fa-check-square"></i> Checkout</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
                             <li><a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>Sign in</a>
                             </li>
                             <li><a class="popup-text" href="#register-dialog" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Sign up</a>
@@ -190,3 +183,32 @@
             </form>
         </div>
         <!-- END LOGIN REGISTER LINKS CONTENT -->
+        
+        
+		<!-- SEARCH AREA -->
+        <form class="search-area form-group search-area-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 clearfix">
+                        <label><i class="fa fa-search"></i><span>I am searching for</span>
+                        </label>
+                        <div class="search-area-division search-area-division-input">
+                            <input class="form-control" type="text" placeholder="Travel Vacation" />
+                        </div>
+                    </div>
+                    <div class="col-md-3 clearfix">
+                        <label><i class="fa fa-map-marker"></i><span>In</span>
+                        </label>
+                        <div class="search-area-division search-area-division-location">
+                            <input class="form-control" type="text" placeholder="Boston" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END SEARCH AREA -->
+
+        <div class="gap"></div>
