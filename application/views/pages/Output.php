@@ -1,3 +1,3 @@
 <?php 
-	print_r($category);
+	print_r($Category);
 ?>
