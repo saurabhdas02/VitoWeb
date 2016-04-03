@@ -16,6 +16,9 @@ class Landing extends CI_Controller {
 		$navdata['Category'] = array("Food","restro","fashon","hello","world","sflds","vdkjs","svkskdvbsk","sdvbsbdv","sbkbd","bcjhbdc","bdhbcz",
 		"ckjd be u","acbc","More");
 		
+		// $this->load->view('templates/header', $data);
+		// $this->load->view('templates/nav');
+		// $this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav',$navdata);
 		$this->load->view('pages/'.$page);
