@@ -47,7 +47,7 @@
                             	<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li><li>
                             	<a href="#">Category</a>
                             		<ul id="col-3-menu">
-                            		<?php foreach($Category as $Cat){ ?>
+                            		<?php foreach($Category["CategoryName"] as $Cat){ ?>
                             			<li id="multicol"><a href="#"><?=$Cat?></a></li>
                             		<?php } ?>
                             		</ul>
@@ -68,8 +68,8 @@
                             	</li><li>
                             		<a href="#">Bank Offers</a>
                             		<ul id="col-3-menu">
-	                            		<?php foreach($Category as $Cat){ ?>
-	                            			<li id="multicol"><a href="#"><?=$Cat?></a></li>
+	                            		<?php foreach($Bank["BankName"] as $bank){ ?>
+	                            			<li id="multicol"><a href="#"><?=$bank?></a></li>
 	                            		<?php } ?>
                             		</ul>
                             	</li><li>
