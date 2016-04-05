@@ -1,6 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 
+<!-- Hide this line for IE (needed for Firefox and others) -->
+<![if !IE]>
+<link rel="icon" href="<?php echo base_url(); ?>vito.png" type="image/gif">
+<![endif]>
+<!-- This is needed for IE -->
+<link rel="shortcut icon" href=".<?php echo base_url(); ?>vito.ico" type="image/ico" />
+ 
 <head>
     <title><?=$title ?></title>
     <!-- meta info -->
@@ -29,8 +36,7 @@
 
 </head>
 
-<body>
-
+<body class="boxed" style="background-image: url(img/textures/wood-1.jpg)">
 
     <div class="global-wrap">
 
