@@ -20,8 +20,7 @@ class Landing extends CI_Controller {
 			show_404();
 		}
 		
-		$navdata['Category'] = array("Food","restro","fashon","hello","world","sflds","vdkjs","svkskdvbsk","sdvbsbdv","sbkbd","bcjhbdc","bdhbcz",
-			"ckjd be u","acbc","More");
+		
 			
 		$data['title'] = $page;
 		

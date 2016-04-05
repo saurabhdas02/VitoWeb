@@ -1,42 +1,4 @@
 
-        <!-- //////////////////////////////////
-	//////////////MAIN HEADER///////////// 
-	////////////////////////////////////-->
-        <div class="top-main-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-                        <a href="<?php echo base_url(); ?>" class="logo mt5">
-                            <img src="<?php echo base_url(); ?>vito.png" style="max-height: 70px;max-width: 70px;" alt="Image Alternative text" title="Image Title" />
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-md-offset-4">
-                        <div class="pull-right">
-                            <ul class="header-features">
-                                <li><i class="fa fa-phone"></i>
-                                    <div class="header-feature-caption">
-                                        <h5 class="header-feature-title">+1-202-555-0140</h5>
-                                        <p class="header-feature-sub-title">24/7 phone assistance</p>
-                                    </div>
-                                </li>
-                                <li><i class="fa fa-truck"></i>
-                                    <div class="header-feature-caption">
-                                        <h5 class="header-feature-title">Free Delivery</h5>
-                                        <p class="header-feature-sub-title">on all orders over $100</p>
-                                    </div>
-                                </li>
-                                <li><i class="fa fa-asterisk"></i>
-                                    <div class="header-feature-caption">
-                                        <h5 class="header-feature-title">Huge Bonuses</h5>
-                                        <p class="header-feature-sub-title">shopping with ease</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <header class="main">
             <div class="container">
                 <div class="row">
@@ -54,22 +16,22 @@
                             	</li><li>
                             	<a href="#">Top Stores</a>
                             		<ul id="col-3-menu">
-                            			<?php foreach($Category as $Cat){ ?>
-                            				<li id="multicol"><a href="#"><?=$Cat?></a></li>
+                            			<?php for($i=0;$i<15;$i++) { ?>
+                            				<li id="multicol"><a href="#">Top store here</a></li>
                             			<?php } ?>
                             		</ul>
                             	</li><li>
                             		<a href="#">Local Offers</a>
                             		<ul id="col-3-menu">
-	                            		<?php foreach($Category as $Cat){ ?>
-	                            			<li id="multicol"><a href="#"><?=$Cat?></a></li>
-	                            		<?php } ?>
+	                            		<?php for($i=0;$i<15;$i++) { ?>
+                            				<li id="multicol"><a href="#">Top store here</a></li>
+                            			<?php } ?>
                             		</ul>
                             	</li><li>
                             		<a href="#">Bank Offers</a>
                             		<ul id="col-3-menu">
-	                            		<?php foreach($Bank["BankName"] as $bank){ ?>
-	                            			<li id="multicol"><a href="#"><?=$bank?></a></li>
+	                            		<?php foreach($Bank as $bank){ ?>
+	                            			<li id="multicol"><a href="#"><?=$bank['BankName']?></a></li>
 	                            		<?php } ?>
                             		</ul>
                             	</li><li>

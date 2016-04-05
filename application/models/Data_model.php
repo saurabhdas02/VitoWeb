@@ -79,7 +79,7 @@ class Data_model extends CI_Model
 		
 		$sql = 'SELECT BankID, BankName FROM BankMaster';
 		$result = $this->db->query($sql);
-		
+		/*
 		$BankID = array();
 		$BankName = array();
 		
@@ -89,6 +89,8 @@ class Data_model extends CI_Model
 			array_push($BankName,$row->BankName);	
 		}
 		return array('BankID' => $BankID, 'BankName' => $BankName);
+	*/
+		return $result->result_array();
 	}
 }
 
