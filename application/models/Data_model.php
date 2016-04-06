@@ -13,8 +13,7 @@ class Data_model extends CI_Model
 	{
 		parent::__construct();
 	}
-	
-	
+		
 	function GetMall()
 	{
 		$response = array();
@@ -90,7 +89,7 @@ class Data_model extends CI_Model
 		
 	}
 
-	function GetNavData(){
+	function GetNavData($city){
 		$response = array();
 		
 		/* $sql = 'SELECT BankID, BankName FROM BankMaster';
@@ -105,9 +104,26 @@ class Data_model extends CI_Model
 			array_push($BankName,$row->BankName);	
 		}
 		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
-		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_navdata.php');
-		print_r($response);
-		return $response; 
+		
+		$postdata = http_build_query
+		(
+			array(
+		        'city' => $city
+		    )
+		);
+		
+		$opts = array('http' =>
+		    array(
+		        'method'  => 'POST',
+		        'header'  => 'Content-type: application/x-www-form-urlencoded',
+		        'content' => $postdata
+		    )
+		);
+		$context  = stream_context_create($opts);
+		
+		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_navdata.php',false,$context);
+		//print_r($response);
+		return json_decode($response,TRUE); 
 		
 	}
 
@@ -127,7 +143,7 @@ class Data_model extends CI_Model
 		}
 		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
 		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_banners.php');
-		print_r($response);
+		//print_r($response);
 		return $response; 
 		
 	}

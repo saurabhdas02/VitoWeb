@@ -21,6 +21,11 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/boostrap.css">
+    
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/switcher.css">
+
+    <link rel="alternate stylesheet" type="text/css" href="<?php echo base_url(); ?>css/schemes/red.css" title="red" media="all" />
+
     <!-- Font Awesome styles (icons) -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/font_awesome.css">
     <!-- Main Template styles -->

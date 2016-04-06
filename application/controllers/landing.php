@@ -27,7 +27,7 @@ class Landing extends CI_Controller {
 		
 		//$navdata["Category"] = $this->Data_model->GetCategories();
 		//$navdata["Bank"] = $this->Data_model->GetBanks();
-		$navdata["MenuBar"] = $this->Data_model->GetNavData();
+		$navdata["MenuBar"] = $this->Data_model->GetNavData('Mumbai');
 		$navdata["Baners"] = $this->Data_model->GetBanners();
 		
 		if(0){
@@ -68,5 +68,6 @@ class Landing extends CI_Controller {
 	}
 	 * 
 	 */
-	
 }
+
+?>
