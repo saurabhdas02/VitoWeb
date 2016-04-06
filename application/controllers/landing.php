@@ -24,8 +24,10 @@ class Landing extends CI_Controller {
 			
 		$data['title'] = $page;
 		
-		$navdata["Category"] = $this->Data_model->GetCategories();
-		$navdata["Bank"] = $this->Data_model->GetBanks();
+		//$navdata["Category"] = $this->Data_model->GetCategories();
+		//$navdata["Bank"] = $this->Data_model->GetBanks();
+		$navdata["MenuBar"] = $this->Data_model->GetNavData();
+		$navdata["Baners"] = $this->Data_model->GetBanners();
 		
 		if(0){
 			
@@ -45,7 +47,7 @@ class Landing extends CI_Controller {
 			//$this->load->view('pages/'.$page, $data);
 			//$this->load->view('templates/header',$data);
 			$this->load->view('templates/nav',$navdata);
-			$this->load->view('pages/'.$page);
+			$this->load->view('pages/'.$page,$navdata);
 			$this->load->view('templates/footer');
 		}
 

@@ -9,40 +9,47 @@
                             	<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li><li>
                             	<a href="#">Category</a>
                             		<ul id="col-3-menu">
-                            		<?php foreach($Category["CategoryName"] as $Cat){ ?>
-                            			<li id="multicol"><a href="#"><?=$Cat?></a></li>
-                            		<?php } ?>
+	                            		<?php $i = 0; foreach($MenuBar['category'] as $Cat){ ?>
+	                            			<?php if($i == 14){ break; } ?>
+	                            			<li id="multicol" style="height:40px;"><a href="#"><?=$Cat['CategoryName']?></a></li>
+	                            		<?php $i++; } ?>
+	                            		<li id="multicol"><a href="#">More Categories</a></li>
                             		</ul>
                             	</li><li>
                             	<a href="#">Top Stores</a>
                             		<ul id="col-3-menu">
-                            			<?php for($i=0;$i<15;$i++) { ?>
-                            				<li id="multicol"><a href="#">Top store here</a></li>
-                            			<?php } ?>
+                            			<?php $i=0; foreach($MenuBar['store'] as $Store) { ?>
+	                            			<?php if($i == 14){ break; } ?>
+                            				<li id="multicol"><a href="#"><?=$Store['MerchantName']?> <span class="badge"><?=$Store['count']?></span></a></li>
+                            			<?php $i++; } ?>
+                            			<li id="multicol"><a href="#">More Stores</a></li>
                             		</ul>
                             	</li><li>
                             		<a href="#">Local Offers</a>
                             		<ul id="col-3-menu">
-	                            		<?php for($i=0;$i<15;$i++) { ?>
-                            				<li id="multicol"><a href="#">Top store here</a></li>
-                            			<?php } ?>
+	                            		<?php $i=0; foreach($MenuBar['city'] as $City) { ?>
+	                            			<?php if($i == 14){ break; } ?>
+                            				<li id="multicol"><a href="#"><?=$City['City']?> <span class="badge"><?=$City['count']?></span></a></li>
+                            			<?php $i++; } ?>
+                            			<li id="multicol"><a href="#">More Local Offer</a></li>
                             		</ul>
                             	</li><li>
                             		<a href="#">Bank Offers</a>
                             		<ul id="col-3-menu">
-	                            		<?php foreach($Bank as $bank){ ?>
-	                            			<li id="multicol"><a href="#"><?=$bank['BankName']?></a></li>
-	                            		<?php } ?>
+	                            		<?php $i=0; foreach($MenuBar['bank'] as $bank){ ?>
+	                            			<?php if($i == 14){ break; } ?>
+	                            			<li id="multicol"><a href="#"><?=$bank['BankName']?> <span class="badge"><?=$bank['count']?></span></a></li>
+	                            		<?php $i++; } ?>
+	                            		<li id="multicol"><a href="#">More Bank Offer</a></li>
                             		</ul>
                             	</li><li>
                             		<a href="#">Top Offers</a>
-                            		<ul id="col-2-menu">
-	                            		<li id="multicol"><a href="#">Top offer here</a></li>
-	                            		<li id="multicol"><a href="#">Top offer here</a></li>
-	                            		<li id="multicol"><a href="#">Top offer here</a></li>
-	                            		<li id="multicol"><a href="#">Top offer here</a></li>
-	                            		<li id="multicol"><a href="#">Top offer here</a></li>
-	                            		<li id="multicol"><a href="#">Top offer here</a></li>
+                            		<ul id="col-2-menu-offer">
+	                        			<?php $i=0; foreach($MenuBar['offers'] as $Offer) { ?>
+	                            			<?php if($i == 6){ break; } ?>
+	                        				<li id="multicoloffer"><a href="<?=$Offer['url']?>"><img id="offermenuicon" src="<?=$Offer['image_url']?>"><span id="offermenudata"><?=$Offer['title']?></span></a></li>
+	                        			<?php $i++; } ?>
+	                        			
                             		</ul>
                             	</li>
                             </ul>

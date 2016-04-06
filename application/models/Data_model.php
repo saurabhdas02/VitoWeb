@@ -1,14 +1,11 @@
 <?php
-
 class Data_model extends CI_Model 
 {
-
 	/**
 	 * Constructor
 	 *
 	 * @access	public
 	 */	
-
 	function __construct()
 	{
 		parent::__construct();
@@ -17,8 +14,8 @@ class Data_model extends CI_Model
 	
 	function GetMall()
 	{
-		
-		$data['data'] = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/new_vito/v5/get_malls.php');
+		$response = array();
+		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/new_vito/v5/get_malls.php');
 		
 		/* $result = http://ec2-52-6-60-173.compute-1.amazonaws.com/new_vito/v5/get_malls.php;
 		$MallID = array();
@@ -31,18 +28,18 @@ class Data_model extends CI_Model
 		}
 		return array('MallID' => $MallID, 'MallName' => $MallName, 'MallNameLoc' => $MallNameLoc); */
 		
-		return $data['data'];
-		
+		//print_r($response);
+		return $response; 		
 	}
 	
 	function GetCategories()
 	{
 		$response = array();
 		
-		$sql = 'SELECT CategoryID, CategoryName FROM CategoryMaster WHERE ParentID = 0';
+		/*$sql = 'SELECT CategoryID, CategoryName FROM CategoryMaster WHERE ParentID = 0';
 		$result = $this->db->query($sql);
 		
-		//$response = $result->result_array();
+		$response = $result->result_array();
 		$CategoryID = array();
 		$CategoryName = array();
 		
@@ -51,9 +48,8 @@ class Data_model extends CI_Model
 			array_push($CategoryID,$row->CategoryID);
 			array_push($CategoryName,$row->CategoryName);
 			
-		}
-		//print_r($result->result());
-		/* $response["category"] = array();
+		} 
+		$response["category"] = array();
 		foreach($result->result_array() as $row)
 		{
 			$city = array();
@@ -62,14 +58,11 @@ class Data_model extends CI_Model
 			$city["CategoryName"] = $row["CategoryName"];
 			
 			array_push($response["category"],$city);
-		} */
+		}
+		return array('CategoryID' => $CategoryID, 'CategoryName' => $CategoryName);*/		
 				
-		//$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/new_vito/v6/get_category.php');
-		//print_r($response);
-		//return $response;
-		
-		return array('CategoryID' => $CategoryID, 'CategoryName' => $CategoryName);
-		
+		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_category.php');
+		return $response;
 		
 	}
 	
@@ -77,9 +70,9 @@ class Data_model extends CI_Model
 	{
 		$response = array();
 		
-		$sql = 'SELECT BankID, BankName FROM BankMaster';
+		/* $sql = 'SELECT BankID, BankName FROM BankMaster';
 		$result = $this->db->query($sql);
-		/*
+		
 		$BankID = array();
 		$BankName = array();
 		
@@ -88,11 +81,50 @@ class Data_model extends CI_Model
 			array_push($BankID,$row->BankID);
 			array_push($BankName,$row->BankName);	
 		}
-		return array('BankID' => $BankID, 'BankName' => $BankName);
-	*/
-		return $result->result_array();
+		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
+		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_banks.php');
+		return json_decode($response,TRUE); 
+		
+	}
+	function GetNavData(){
+		$response = array();
+		
+		/* $sql = 'SELECT BankID, BankName FROM BankMaster';
+		$result = $this->db->query($sql);
+		
+		$BankID = array();
+		$BankName = array();
+		
+		foreach ($result->result() as $row) 
+		{
+			array_push($BankID,$row->BankID);
+			array_push($BankName,$row->BankName);	
+		}
+		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
+		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_navdata.php');
+		//print_r($response);
+		return json_decode($response,TRUE); 
+		
+	}
+	function GetBanners(){
+		$response = array();
+		
+		/* $sql = 'SELECT BankID, BankName FROM BankMaster';
+		$result = $this->db->query($sql);
+		
+		$BankID = array();
+		$BankName = array();
+		
+		foreach ($result->result() as $row) 
+		{
+			array_push($BankID,$row->BankID);
+			array_push($BankName,$row->BankName);	
+		}
+		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
+		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_banners.php');
+		//print_r($response);
+		return json_decode($response,TRUE); 
+		
 	}
 }
-
 ?>
-
