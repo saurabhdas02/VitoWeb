@@ -53,15 +53,55 @@
 
 #multicol{
 	display:inline-block;
-	width:175px;
+	width:200px;
+}
+
+#multicoloffer{
+	display:inline-block;
+	width:250px;
+	height:80px;
+	overflow: hidden;
+}
+
+#multicoloffer a:hover{
+	width:250px;
+	height:80px;
+	overflow:hidden;
+	background-color:#2a8fbd;
+}
+
+#col-3-menu-store{
+	width:760px;
+}
+#col-2-menu-offer{
+	width:510px;
 }
 
 #col-3-menu{
-	width:535px;
+	width:610px;
 }
 
 #col-2-menu{
-	width:360px;
+	width:410px;
+}
+
+#offermenuicon{
+	height:50px;
+	width:50px;
+	margin-left:2px;
+	margin-bottom: 2px;
+	margin-right:2px;
+	margin-top: 0px;
+}
+#offermenudata{
+	height:60px;
+	width:180px;
+	position:absolute;
+	overflow: hidden;
+	margin-left:2px;
+	margin-bottom: 2px;
+	margin-right:2px;
+	margin-top: 0px;
 }
 
 .active{

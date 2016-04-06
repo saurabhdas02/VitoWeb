@@ -1,14 +1,11 @@
 <?php
-
 class Data_model extends CI_Model 
 {
-
 	/**
 	 * Constructor
 	 *
 	 * @access	public
 	 */	
-
 	function __construct()
 	{
 		parent::__construct();
@@ -85,7 +82,7 @@ class Data_model extends CI_Model
 		}
 		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
 		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_banks.php');
-		return $response; 
+		return json_decode($response,TRUE); 
 		
 	}
 
@@ -104,6 +101,7 @@ class Data_model extends CI_Model
 			array_push($BankName,$row->BankName);	
 		}
 		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
+
 		
 		$postdata = http_build_query
 		(
@@ -126,7 +124,6 @@ class Data_model extends CI_Model
 		return json_decode($response,TRUE); 
 		
 	}
-
 	function GetBanners(){
 		$response = array();
 		
@@ -144,11 +141,7 @@ class Data_model extends CI_Model
 		return array('BankID' => $BankID, 'BankName' => $BankName);*/ 
 		$response = file_get_contents('http://ec2-52-6-60-173.compute-1.amazonaws.com/WebApi/get_banners.php');
 		//print_r($response);
-		return $response; 
-		
+		return json_decode($response,TRUE); 
 	}
-
 }
-
 ?>
-
